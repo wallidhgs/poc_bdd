@@ -3,9 +3,22 @@
 BDD version of the project [QA101_final_project_csharp][project_csharp]
 
 ## Dependencies
+This project requires [.NET 8.0](https://dotnet.microsoft.com/es-es/download/dotnet/8.0) or above
 
 ```sh
 dotnet restore
+```
+
+## Running the tests
+For first time runs you may need to download browsers for playwright. The easiest way to do this is by [downloading powershell](https://github.com/PowerShell/PowerShell/releases/tag/v7.4.1) and then run the following command:
+```sh
+pwsh bin/Debug/netX/playwright.ps1 install
+```
+_Note: replace "netX" with the actual output folder name, e.g. net8.0. Visit [playwright docs page](https://playwright.dev/dotnet/docs/intro) for more info_
+
+Run the tests with:
+```sh
+dotnet test
 ```
 
 ## Chrome profile
