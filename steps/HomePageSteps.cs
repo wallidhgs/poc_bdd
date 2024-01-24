@@ -31,7 +31,7 @@ namespace Steps
         [Then("User can see Login-Button")]
         public async Task ThenUserCanSeeLoginButton()
         {
-            bool btnLoginExists = await homePage.LocatorExist(homePage.BtnLogin);
+            bool btnLoginExists = await homePage.LocatorIsVisible(homePage.BtnLogin);
             Assert.That(btnLoginExists, Is.True);
         }
     }
