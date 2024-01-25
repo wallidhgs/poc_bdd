@@ -9,6 +9,10 @@ namespace PageObject
             this.page = page;
         }
 
-        public ILocator BtnLogin => page.Locator("[data-purpose='header-login']");
+        public ILocator PageIndicator => page.Locator("div#dashboard_header_container");
+        
+        public async Task<bool> IsUserInPage() {
+            return await LocatorIsVisible(PageIndicator);
+        }
     }
 }

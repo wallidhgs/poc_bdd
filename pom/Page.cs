@@ -16,6 +16,7 @@ namespace PageObject
         public async Task GoToPage(){
             await page.GotoAsync(Url);
         }
+
         public async Task<bool> LocatorIsVisible(ILocator locator){
             try
             {
