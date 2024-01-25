@@ -30,6 +30,8 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet }}
+      - name: Install Browsers
+        run: pwsh bin/Debug/netX/playwright.ps1 install
       - name: Build
         run: dotnet build
       - name: Run Tests
