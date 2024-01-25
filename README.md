@@ -38,6 +38,22 @@ dotnet test
 > Replace `<user>` with your username \
 > chrome://version >> Profile Path
 
+## Reporter
+
+Specflow reporter
+
+```sh
+dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
+
+#test the install
+livingdoc -h
+
+dotnet build
+dotnet test
+livingdoc test-assembly bin/Debug/net8.0/poc_bdd.dll -t bin/Debug/net8.0/TestExecution.json --title "Canvas Automation Report" --output ./report/index.html
+open ./report/index.html
+```
+
 ## References
 
 - Documentation: [Cucumber Gherkin][cucumber_gherkin]

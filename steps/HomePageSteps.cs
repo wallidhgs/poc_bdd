@@ -14,25 +14,5 @@ namespace Steps
             this.page = page;
             homePage = new HomePage(page);
         }
-
-        [Given("User is Unsigned")]
-        public async Task GivenUserIsUnsigned()
-        {
-            // Pending to implement kill cookies session
-            await homePage.GoToPage();
-        }
-
-        [When("User is on HomePage")]
-        public async Task WhenUserIsOnHomePage()
-        {
-            await homePage.GoToPage();
-        }
-
-        [Then("User can see Login-Button")]
-        public async Task ThenUserCanSeeLoginButton()
-        {
-            bool btnLoginExists = await homePage.LocatorIsVisible(homePage.BtnLogin);
-            Assert.That(btnLoginExists, Is.True);
-        }
     }
 }

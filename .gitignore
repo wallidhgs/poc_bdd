@@ -1,5 +1,8 @@
+.env
+
 bin/
 obj/
-.env
 *.sln
 *.feature.cs
+
+report/
