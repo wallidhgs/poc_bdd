@@ -10,6 +10,9 @@ namespace Steps
         private readonly HomePage homePage;
         private readonly LoginPage loginPage;
 
+        private string INSTRUCTOR_EMAIL = $"{Environment.GetEnvironmentVariable("INSTRUCTOR_EMAIL")}";
+        private string INSTRUCTOR_PWD = $"{Environment.GetEnvironmentVariable("INSTRUCTOR_PWD")}";
+
         public SessionSteps(IPage page)
         {
             this.page = page;
@@ -28,7 +31,7 @@ namespace Steps
         {
             await page.Context.ClearCookiesAsync();
             await loginPage.GoToPage();
-            loginPage.SetCredentials("jesus.gaona@enroutesystems.com", "Enroute1*");
+            loginPage.SetCredentials(INSTRUCTOR_EMAIL, INSTRUCTOR_PWD);
             await loginPage.DoLogin();
         }
     }

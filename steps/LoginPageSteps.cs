@@ -6,6 +6,8 @@ namespace Steps
     [Binding]
     public class LoginPageSteps
     {
+        private readonly string INSTRUCTOR_EMAIL = $"{Environment.GetEnvironmentVariable("INSTRUCTOR_EMAIL")}";
+        private readonly string INSTRUCTOR_PWD = $"{Environment.GetEnvironmentVariable("INSTRUCTOR_PWD")}";
         private readonly IPage page;
         private readonly HomePage homePage;
         private readonly LoginPage loginPage;
@@ -20,12 +22,12 @@ namespace Steps
         [Given("the user has valid credentials")]
         public void TheUserHasValidCredentials()
         {
-            loginPage.SetCredentials("jesus.gaona@enroutesystems.com", "Enroute1*");
+            loginPage.SetCredentials(INSTRUCTOR_EMAIL, INSTRUCTOR_PWD);
         }
         [Given("the user has invalid credentials")]
         public void TheUserHasInvalidCredentials()
         {
-            loginPage.SetCredentials("faultycreds@enroutesystems.com", "Test123");
+            loginPage.SetCredentials("invalidcreds@enroutesystems.com", "Test123");
         }
         
         [When("the user performs a log in")]
