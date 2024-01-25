@@ -1,0 +1,38 @@
+name: 
+
+# Triggers the workflow on pull request and merge to main
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, reopened, synchronize]
+  push:
+    branches:
+      - master
+  # schedule:
+  #   - cron: '40 12 * * 1'
+
+env:
+  BASE_URL: ${{ secrets.BASE_URL }}
+  INSTRUCTOR_EMAIL: ${{ secrets.INSTRUCTOR_EMAIL }}
+  INSTRUCTOR_PWD: ${{ secrets.INSTRUCTOR_PWD }}
+
+jobs:
+  bdd-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet: [ '8.0' ]
+    name: Execute Tests
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet }}
+      - name: Build
+        run: dotnet build
+      - name: Run Tests
+        run: dotnet test
+      - name: Build Report
+        run: livingdoc test-assembly bin/Debug/net8.0/poc_bdd.dll -t bin/Debug/net8.0/TestExecution.json --title "Canvas Automation Report" --output ./report/index.html
