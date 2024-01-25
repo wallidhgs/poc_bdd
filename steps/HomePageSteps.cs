@@ -15,13 +15,6 @@ namespace Steps
             homePage = new HomePage(page);
         }
 
-        [Given("User is Unsigned")]
-        public async Task GivenUserIsUnsigned()
-        {
-            // Pending to implement kill cookies session
-            // await homePage.GoToPage();
-        }
-
         [When("User is on HomePage")]
         public async Task WhenUserIsOnHomePage()
         {

@@ -1,17 +1,20 @@
+using System.Configuration;
+using Steps;
+
 namespace PageObject
 {
     class HomePage : Page
     {
         private IPage page;
 
-        public HomePage(IPage page) : base(page)
+        public HomePage(IPage page) : base(page, PagePath.DASHBOARD)
         {
             this.page = page;
         }
 
-        public ILocator PageIndicator => page.Locator("div#dashboard_header_container");
+        private ILocator PageIndicator => page.Locator("div#dashboard_header_container");
         
-        public async Task<bool> IsUserInPage() {
+        public override async Task<bool> IsUserInPage() {
             return await LocatorIsVisible(PageIndicator);
         }
     }

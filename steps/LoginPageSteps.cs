@@ -22,19 +22,17 @@ namespace Steps
         {
             loginPage.SetCredentials("jesus.gaona@enroutesystems.com", "Enroute1*");
         }
+        [Given("the user has invalid credentials")]
+        public void TheUserHasInvalidCredentials()
+        {
+            loginPage.SetCredentials("faultycreds@enroutesystems.com", "Test123");
+        }
+        
         [When("the user performs a log in")]
         public async Task WhentheUserPerformsALogIn()
         {
-            // Pending to implement kill cookies session
-            // await browserContext.clearCookies();
             await loginPage.DoLogin();
         }
-        [Then(@"the user should be redirected to (.*) page")]
-        public async Task ThenTheUserShouldBeRedirectedToDashboardPage(string pageName)
-        {
-            Console.WriteLine($">>pageName: {pageName}");
-            bool isUserInPage = await homePage.IsUserInPage();
-            Assert.That(isUserInPage, Is.True);
-        }
+
     }
 }

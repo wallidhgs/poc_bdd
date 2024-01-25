@@ -10,9 +10,9 @@ Feature: Login
         When the user performs a log in
         Then the user should be redirected to dashboard page
 
-    Scenario: Unsuccessful login
-        Given the user is not logged in
-        And the user has invalid credentials
-        When the user performs a log in
-        Then the user should be redirected to login page
-        And the page should display an error popup
+   Scenario: Unsuccessful login
+       Given the user is not logged in
+       And the user has invalid credentials
+       When the user performs a log in
+       Then the user should be redirected to login page
+       And the page should display error popup

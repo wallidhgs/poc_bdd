@@ -20,14 +20,12 @@ namespace Steps
         [Given("the user is not logged in")]
         public async Task GivenTheUserIsNotLoggedIn()
         {
-            // Pending to implement kill cookies session
-            // await browserContext.clearCookies();
+            await page.Context.ClearCookiesAsync();
             await loginPage.GoToPage();
         }
         [Given("the user is logged in")]
         public async Task GivenTheUserIsLoggedIn()
         {
-            // Pending to implement init session
             await homePage.GoToPage();
         }
     }
