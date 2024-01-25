@@ -4,7 +4,7 @@ name:
 on:
   pull_request:
     branches:
-      - main
+      - master
     types: [opened, reopened, synchronize]
   push:
     branches:
@@ -13,7 +13,7 @@ on:
   #   - cron: '40 12 * * 1'
 
 env:
-  BASE_URL: ${{ secrets.BASE_URL }}
+  BASE_URL: ${{ vars.BASE_URL }}
   INSTRUCTOR_EMAIL: ${{ secrets.INSTRUCTOR_EMAIL }}
   INSTRUCTOR_PWD: ${{ secrets.INSTRUCTOR_PWD }}
 
@@ -30,9 +30,21 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet }}
+      - name: Restore Packages
+        run: dotnet restore
       - name: Build
         run: dotnet build
+      - name: Install Browsers
+        run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
+      - name: Install Specflow LivingDoc
+        run: dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
       - name: Run Tests
         run: dotnet test
       - name: Build Report
         run: livingdoc test-assembly bin/Debug/net8.0/poc_bdd.dll -t bin/Debug/net8.0/TestExecution.json --title "Canvas Automation Report" --output ./report/index.html
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: ./report
+          retention-days: 5
