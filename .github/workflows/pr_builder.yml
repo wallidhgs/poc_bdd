@@ -32,11 +32,16 @@ jobs:
           dotnet-version: ${{ matrix.dotnet }}
       - name: Restore Packages
         run: dotnet restore
+        working-directory: ./poc_bdd
       - name: Install Browsers
         run: pwsh bin/Debug/netX/playwright.ps1 install
+        working-directory: ./poc_bdd
       - name: Build
         run: dotnet build
+        working-directory: ./poc_bdd
       - name: Run Tests
         run: dotnet test
+        working-directory: ./poc_bdd
       - name: Build Report
         run: livingdoc test-assembly bin/Debug/net8.0/poc_bdd.dll -t bin/Debug/net8.0/TestExecution.json --title "Canvas Automation Report" --output ./report/index.html
+        working-directory: ./poc_bdd
