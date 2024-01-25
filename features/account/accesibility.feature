@@ -1,21 +1,13 @@
-Feature: User settings page
-    As a logged user, in any page
-    I want to toggle Use High Contrast UI from The left menu in the account section
-    So I can view page more easily
-    Ticket 008
+@ORIGIN-Ticket-008
+Feature: Accesibility
+As a logged user, on any page, I want to be able to toggle Use High Contrast UI from the left menu in the Account section. So the visibility for the user is way better.
 
-    Scenario: Activate high contrast ui
-        Given the user is logged in
-        And the user is on "dashboard" page
-        And the user open the "account" side menu
-        When the user click toggle "true" the "high contrast" check
-        And the page is refreshed
-        Then the page should be displayed in high contrast
+    Scenario: The user should be able to activate high-contrast UI
+        Given the option of changing the contrast is available through the account side menu
+        When the high contrast option is enabled
+        Then the website is displayed in high contrast
 
-    Scenario: Deactivate high contrast ui
-        Given the user is logged in
-        And the user is on "dashboard" page
-        And the user open the "account" side menu
-        When the user click toggle "false" the "high contrast" check
-        And the page is refreshed
-        Then the page should not be displayed in high contrast
+    Scenario: The user should be able to deactivate high-contrast UI
+        Given the option of changing the contrast is available through the account side menu
+        When the high contrast option is disabled
+        Then the website is displayed in high contrast

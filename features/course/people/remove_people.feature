@@ -1,8 +1,6 @@
-Feature: Course people page
-    As a logged instructor, in the course people page
-    I want to have an option to remove a person from the course
-    So I can revoke access to dropout person
-    Ticket 010
+@ORIGIN-Ticket-009
+Feature: Remove People Page
+    As a logged instructor, on the course people page, I want to be able to remove students or teachers.
 
     Scenario: Remove student
         Given the user is logged in
