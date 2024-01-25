@@ -1,11 +1,11 @@
 name: 
 
-# Triggers the workflow on pull request and merge to main
 on:
-  pull_request:
-    branches:
-      - master
-    types: [opened, reopened, synchronize]
+  # Last day of the month
+  schedule:
+    - cron: '0 0 30 4,6,9,11 *'
+    - cron: '0 0 31 1,3,5,7,8,10,12 *'
+    - cron: '0 0 28 2 *'
 
 env:
   BASE_URL: ${{ vars.BASE_URL }}
@@ -34,7 +34,7 @@ jobs:
       - name: Install Specflow LivingDoc
         run: dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
       - name: Run Tests
-        run: dotnet test --filter "Category=automated & Category=pr-builder-suite"
+        run: dotnet test --filter "Category=automated & Category=release-suite"
       - name: Build Report
         run: livingdoc test-assembly bin/Debug/net8.0/poc_bdd.dll -t bin/Debug/net8.0/TestExecution.json --title "Canvas Automation Report" --output ./report/index.html
       - name: Upload artifacts

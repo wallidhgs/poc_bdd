@@ -1,4 +1,4 @@
-@ORIGIN-Ticket-009
+@origin-ticket-009
 Feature: Add People Page
 As a logged instructor, on the course people page, I want to be able to add students or teachers by email. All the students and teachers should receive the proper invitation to the course.
 

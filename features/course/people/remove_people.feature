@@ -1,4 +1,4 @@
-@ORIGIN-Ticket-009
+@origin-ticket-009
 Feature: Remove People Page
     As a logged instructor, on the course people page, I want to be able to remove students or teachers.
 
