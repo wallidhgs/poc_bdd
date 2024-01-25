@@ -10,7 +10,7 @@ namespace PageObject
         {
             this.page = page;
         }
-        private ILocator PageIndicator => page.Locator("div#dashboard_header_container");
+        private ILocator PageIndicator => page.Locator("div#dashboard");
         public override async Task<bool> IsUserInPage() {
             return await LocatorIsVisible(PageIndicator);
         }
