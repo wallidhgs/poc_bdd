@@ -13,7 +13,7 @@ on:
   #   - cron: '40 12 * * 1'
 
 env:
-  BASE_URL: ${{ secrets.BASE_URL }}
+  BASE_URL: ${{ vars.BASE_URL }}
   INSTRUCTOR_EMAIL: ${{ secrets.INSTRUCTOR_EMAIL }}
   INSTRUCTOR_PWD: ${{ secrets.INSTRUCTOR_PWD }}
 
