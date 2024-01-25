@@ -1,3 +1,24 @@
 {
-  "editor.tabSize": 4
+  // this '*' is the default for all languages, unless otherwise specified.
+  "[*]": {
+    "editor.tabSize": 2
+  },
+  "[github-actions-workflow]": {
+    "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "editor.tabSize": 2
+  },
+  "[csharp]": {
+    "editor.tabSize": 4
+  },
+  "[xml]": {
+    "editor.tabSize": 2
+  },
+  "[feature]": {
+    "editor.tabSize": 4
+  },
+  "[json]": {
+    "editor.tabSize": 2
+  }
 }
