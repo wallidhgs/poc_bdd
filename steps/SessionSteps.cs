@@ -26,7 +26,10 @@ namespace Steps
         [Given("the user is logged in")]
         public async Task GivenTheUserIsLoggedIn()
         {
-            await homePage.GoToPage();
+            await page.Context.ClearCookiesAsync();
+            await loginPage.GoToPage();
+            loginPage.SetCredentials("jesus.gaona@enroutesystems.com", "Enroute1*");
+            await loginPage.DoLogin();
         }
     }
 }

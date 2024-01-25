@@ -10,7 +10,7 @@ namespace Steps
         private readonly HomePage homePage;
         private readonly LoginPage loginPage;
 
-        public NavigationSteps(IPage page, IBrowser browser)
+        public NavigationSteps(IPage page)
         {
             this.page = page;
             homePage = new HomePage(page);

@@ -6,14 +6,11 @@ namespace PageObject
     class HomePage : Page
     {
         private IPage page;
-
         public HomePage(IPage page) : base(page, PagePath.DASHBOARD)
         {
             this.page = page;
         }
-
         private ILocator PageIndicator => page.Locator("div#dashboard_header_container");
-        
         public override async Task<bool> IsUserInPage() {
             return await LocatorIsVisible(PageIndicator);
         }

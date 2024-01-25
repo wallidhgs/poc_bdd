@@ -7,10 +7,10 @@ Feature: Forgot Password
     Scenario: Request reset password success
         Given the user is not logged in
         When the user request a password reset
-        Then the page should display a "success" popup
+        Then the page should display success popup
 
-    Scenario: Request reset password success
+    Scenario: Back to login from forgot password page
         Given the user is not logged in
-        And the user is on "reset password" page
-        When the user click "back to login" button
-        Then the user should be redirected to "login" page
+        And the user is on reset password page
+        When the user click back to login button
+        Then the user should be redirected to login page

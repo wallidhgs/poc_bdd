@@ -31,6 +31,17 @@ namespace PageObject
                 return false;
             }
         }
+        public async Task<bool> LocatorIsVisible(ILocator locator, int timeout){
+            try
+            {
+                await locator.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible, Timeout = timeout });
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         public abstract Task<bool> IsUserInPage();
         
         public async Task<bool> IsPopupDisplayed(string popupTypeString){
@@ -40,5 +51,8 @@ namespace PageObject
             return false;
         }
 
+        public async Task Refresh(){
+            await page.ReloadAsync();
+        }
     }
 }

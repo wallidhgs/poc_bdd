@@ -14,11 +14,5 @@ namespace Steps
             this.page = page;
             homePage = new HomePage(page);
         }
-
-        [When("User is on HomePage")]
-        public async Task WhenUserIsOnHomePage()
-        {
-            await homePage.GoToPage();
-        }
     }
 }
