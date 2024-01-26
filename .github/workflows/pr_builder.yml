@@ -1,4 +1,4 @@
-name: 
+name: PR Builder Workflow
 
 # Triggers the workflow on pull request and merge to main
 on:

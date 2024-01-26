@@ -1,4 +1,4 @@
-name: 
+name: Release Workflow
 
 on:
   # Last day of the month
