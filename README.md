@@ -74,7 +74,7 @@ livingdoc --version
 
 If you open the project with VSCode you will might get a set of recommended plugins popup
 
-![Recommended Extensions](./readme-img/extension-recommendations.pngf)
+![Recommended Extensions](./readme-img/extension-recommendations.png)
 
 > [!TIP]
 >If you missed it, you can still go to the extensions menu and search `@recommended` to get them in a single list
