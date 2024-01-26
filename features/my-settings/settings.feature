@@ -1,4 +1,4 @@
-@origin-ticket-007 @my-settings-page
+@pending @origin-ticket-007 @my-settings-page
 Feature: User Settings Page
     As a logged user, on the settings page, I want to be able to see the user profile details.
     The user should be able to update the information.

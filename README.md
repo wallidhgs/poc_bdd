@@ -193,6 +193,21 @@ IBrowser browser = await playwright.Chromium.LaunchAsync(new() {
 > [!CAUTION]
 > Avoid including Headless or SlowMo into your PR or the workflows may timeout
 
+## Playwright codegen
+
+> [!NOTE]
+> Run the [One Time Setup](#one-time-setup) before starting the codegen
+
+Start codegen then do your navigation or click the toolbar for assertions, then adjust the code to your test
+
+```sh
+# Start Codegen
+# pwsh bin/Debug/net8.0/playwright.ps1 codegen <Initial Page>
+pwsh bin/Debug/net8.0/playwright.ps1 codegen https://canvas.enroutesystems.com/
+```
+
+- Documentation: [PLaywright Codegen][codegen]
+
 ## Developer quick reference
 
 - NUnit [Assertions][assert]
@@ -220,3 +235,4 @@ IBrowser browser = await playwright.Chromium.LaunchAsync(new() {
 [hooks]: https://docs.specflow.org/projects/specflow/en/latest/Bindings/Hooks.html
 [locators-guide]: https://playwright.dev/dotnet/docs/locators
 [locator-class]: https://playwright.dev/dotnet/docs/api/class-locator
+[codegen]: https://playwright.dev/dotnet/docs/codegen-intro

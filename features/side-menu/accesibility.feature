@@ -1,4 +1,4 @@
-@origin-ticket-008 @accesibility
+@origin-ticket-008 @accesibility @regression-suite @release-suite
 Feature: Accesibility
     As a logged user, on any page, I want to be able to toggle Use High Contrast UI from the left menu in the Account section. So the visibility for the user is way better.
 

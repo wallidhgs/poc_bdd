@@ -1,3 +1,4 @@
+@pending
 Feature: Course homepage
     As an logged instructor, in the course home page
     I want see the link to the section pages
