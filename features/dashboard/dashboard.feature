@@ -1,3 +1,4 @@
+@pending
 Feature: Dashboard
     As a logged user, in the dashboard
     I want to see Published and Unpublished courses

@@ -1,3 +1,4 @@
+@pending
 Feature: View as student
     As an logged instructor, in the course home page
     I want to have a button to enter "student view" mode

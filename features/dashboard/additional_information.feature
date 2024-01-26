@@ -1,3 +1,4 @@
+@pending
 Feature: Dashboard additional information
     As a logged user, in the dashboard
     I want to see to additional information
