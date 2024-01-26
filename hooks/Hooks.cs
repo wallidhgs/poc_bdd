@@ -25,7 +25,7 @@ namespace Steps
             IPlaywright playwright = await Playwright.CreateAsync();
             IBrowser browser = await playwright.Chromium.LaunchAsync(new() {
                 // Headless = false,
-                // SlowMo = 500,
+                SlowMo = 200,
             });
             IPage page = await browser.NewPageAsync();
             container.RegisterInstanceAs(playwright);
