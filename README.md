@@ -153,7 +153,7 @@ You can click report scenarios in order to see a screenshot taken at each step, 
   Behaviour scenarios are meant to be readable and expressive. Steps are meant to be reusable.
 
 - Article: [Writting Good Gherkin][gherkin_rules]
-- Video: [How to Write Good Gherkin for BDD][[good-gherkin-for-bdd]]
+- Video: [How to Write Good Gherkin for BDD][good-gherkin-for-bdd]
 - Article: [Cucumber anti-patterns][anti-pattern]
 - Article: [Gherkin reference][cucumber-gherkin]
 
