@@ -43,14 +43,12 @@ namespace PageObject
             }
         }
         public abstract Task<bool> IsUserInPage();
-        
         public async Task<bool> IsPopupDisplayed(string popupTypeString){
             string innerHtml = await popupContainerLocator.InnerHTMLAsync();
             if (popupTypeString == PopupTypes.ERROR)
                 return innerHtml.Contains("icon-warning");
             return false;
         }
-
         public async Task Refresh(){
             await page.ReloadAsync();
         }
