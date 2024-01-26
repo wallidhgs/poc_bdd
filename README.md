@@ -11,7 +11,7 @@ The objectives are:
 
 ## Technology Stack
 
-- [Behavior-Driven Development (BDD)][bdd] \
+- [Behavior-Driven Development (BDD)][bdd] a change \
   BDD serves as a framework for promoting collaboration, clarity, and shared understanding among stakeholders, with the ultimate goal of delivering high-quality software that meets the needs of its users and the objectives of the business.
 - [.NET Core][netcore] \
   A compelling platform for building automation solutions that are robust, performant, and maintainable across different environments and requirements.
