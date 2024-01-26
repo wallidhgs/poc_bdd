@@ -1,4 +1,4 @@
-@origin-ticket-001 @login @pr-builder-suite @regression-suite @release-suite
+@origin-ticket-001 @login @pr-builder-suite @release-suite
 Feature: Login
     As a user with valid credentials
     I want to securely log in to the learning management system

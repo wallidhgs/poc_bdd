@@ -1,4 +1,4 @@
-@origin-ticket-002 @forgot-password @pr-builder-suite @regression-suite
+@origin-ticket-002 @forgot-password @pr-builder-suite
 Feature: Forgot Password
     As a user
     I want to reset my password from the login page
